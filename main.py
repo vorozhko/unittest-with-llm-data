@@ -31,12 +31,13 @@ def list_electronics(limit: int) -> List[Electronics]:
     return f"Generate {limit} number of electronic products"
 
 
-class TestProductMethods(unittest.TestCase):
+class TestElectronics(unittest.TestCase):
     """ Test class using LLM to generate domain data """
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
         """ Generating test data once """
-        self._products = list_electronics(5)
+        cls._products = list_electronics(5)
 
     def test_model_is_string(self):
         """ Test product model field is string """
